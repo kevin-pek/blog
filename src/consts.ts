@@ -16,7 +16,7 @@ type Page = {
 
 export const PAGES: Page[] = [
   {
-    title: "Index",
+    title: "Blog",
     href: "/",
   },
 ]
