@@ -1,0 +1,21 @@
+<script>
+  const COLOR = "#B18CE7"
+
+  const cursorGlow = document.getElementById("cursorGlow") as HTMLDivElement
+
+  function render() {
+    if (cursorGlow) {
+      cursorGlow.style.background = COLOR
+      requestAnimationFrame(render)
+    }
+  }
+
+  function moveCursor(e: MouseEvent) {
+    cursorGlow.style.transform = `translate(${e.clientX - cursorGlow.offsetWidth / 2}px, ${e.clientY - cursorGlow.offsetHeight / 2}px)`
+  }
+
+  window.requestAnimationFrame(render)
+  window.addEventListener("mousemove", moveCursor)
+</script>
+
+<div id="cursorGlow" class="pointer-events-none fixed z-10 h-64 w-64 rounded-full opacity-50 blur-[10rem]"></div>

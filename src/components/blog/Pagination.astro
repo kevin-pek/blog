@@ -1,0 +1,37 @@
+---
+import { Icon } from "astro-icon"
+import Link from "@/components/Link.astro"
+
+export interface Props {
+  prevUrl: string
+  nextUrl: string
+  prevText?: string
+  nextText?: string
+  class?: string
+}
+
+const url = Astro.url
+
+const { prevUrl, nextUrl, prevText = "blog.prev", nextText = "blog.next", class: className } = Astro.props
+---
+
+{
+  (prevUrl || nextUrl) && (
+    <div class:list={["container flex", className]}>
+      <div class="container mx-auto flex flex-row justify-center gap-8">
+        <Link href={prevUrl} style="muted" class={`${!prevUrl ? "invisible" : ""}`}>
+          <div class="flex flex-row align-middle">
+            <Icon name="tabler:chevron-left" class="h-6 w-6" />
+            <p class="ml-2">Prev</p>
+          </div>
+        </Link>
+        <Link href={nextUrl} style="muted" class={`${!nextUrl ? "invisible" : ""}`}>
+          <div class="flex flex-row align-middle">
+            <span class="mr-2">Next</span>
+            <Icon name="tabler:chevron-right" class="h-6 w-6" />
+          </div>
+        </Link>
+      </div>
+    </div>
+  )
+}
