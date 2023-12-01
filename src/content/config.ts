@@ -14,7 +14,7 @@ const parseOptionalDateFormat = (dateString: string | undefined) => {
 }
 
 const parseCustomDateFormat = (dateString: string) => {
-  const parsedDate = parse(dateString, "dd-MM-yyyy", new Date())
+  const parsedDate = parse(dateString, "EEEE dd-MM-yyyy HH:mm", new Date())
   if (!isValid(parsedDate)) {
     throw new Error("Invalid date format")
   }
