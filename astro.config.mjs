@@ -9,6 +9,7 @@ import remarkMath from "remark-math"
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://blog.kevinpek.com",
   integrations: [tailwind(), mdx(), sitemap(), alpinejs()],
   markdown: {
     remarkPlugins: [remarkMath],
