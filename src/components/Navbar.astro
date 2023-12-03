@@ -18,7 +18,7 @@
       x-data={`{
       theme: localStorage.theme ?? "system",
       updateTheme: function (value) {
-        document.querySelector("html")?.setAttribute("data-theme", value)
+        document.documentElement.setAttribute("data-theme", value)
         this.theme = value
         localStorage.setItem("theme", value);
       }

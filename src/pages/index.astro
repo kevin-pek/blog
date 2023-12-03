@@ -14,9 +14,10 @@ const posts = (await getCollection("blog", (entry) => entry.slug))
 
 import Hero from "@/components/Hero.astro"
 import FormattedDate from "@/components/FormattedDate.astro"
+import { SITE_TITLE } from "@/consts"
 ---
 
-<Layout title="Blog">
+<Layout title={SITE_TITLE}>
   <Hero />
   <ul class="mx-auto mt-8 flex max-w-3xl list-none flex-col items-center gap-0">
     {

@@ -14,10 +14,10 @@ interface Props {
   image?: string
 }
 
-// const canonicalURL = new URL(Astro.url.pathname, Astro.site)
-// const resolvedImageWithDomain = new URL("/meta/opengraph.png", Astro.site).toString()
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const resolvedImageWithDomain = new URL("/meta/opengraph.png", Astro.site).toString()
 
-const { title = SITE_TITLE, description = SITE_DESCRIPTION, image = "/blog-placeholder-2.jpg" } = Astro.props
+const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props
 ---
 
 <!-- Global Metadata -->
@@ -26,19 +26,31 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION, image = "/blog-place
 <!-- Primary Meta Tags -->
 <title>{title}</title>
 
+
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
 <SEO
   title={title}
   description={description}
-  canonical={Astro.url}
+  canonical={canonicalURL}
+  openGraph={{
+    basic: {
+      url: canonicalURL,
+      title: title,
+      type: "website",
+      image: resolvedImageWithDomain,
+    },
+    optional: {
+      description: description,
+      siteName: title,
+      locale: "en",
+    },
+    image: {
+      alt: title
+    }
+  }}
   extend={{
-    // extending the default link tags
-    link: [
-      {
-        rel: "icon",
-        type: "image/svg+xml",
-        href: "/favicon.svg",
-      },
-    ],
     // extending the default meta tags
     meta: [
       {

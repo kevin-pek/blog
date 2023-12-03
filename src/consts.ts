@@ -1,7 +1,7 @@
 // Website metadata
 export const SITE_URL: string = "https://blog.kevinpek.com"
 export const SITE_TITLE: string = "Kevin Pek's Blog"
-export const SITE_DESCRIPTION: string = "Welcome to my blog! I write about random projects I work on here, and random topics I'm interested in."
+export const SITE_DESCRIPTION: string = "Welcome to my blog! I write about random projects I work on here, and any topic I'm interested in."
 
 // Repo info
 export const REPO: string = "kevin-pek/blog"
@@ -16,10 +16,7 @@ type Page = {
 
 export const PAGES: Page[] = [
   {
-    title: "Blog",
+    title: "Kevin Pek's Blog",
     href: "/",
   },
 ]
-
-// Hosting
-export const HOSTING_SERVICE: "cloudflare" | "netlify" | "none" = "cloudflare"
