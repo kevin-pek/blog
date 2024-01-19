@@ -4,7 +4,7 @@ import { getCollection } from "astro:content"
 import type { CollectionEntry } from "astro:content"
 
 const posts = (await getCollection("blog", (entry) => entry.slug))
-  .sort((a, b) => a.data.publishDate.valueOf() - b.data.publishDate.valueOf())
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
   .map<CollectionEntry<"blog"> & { href: string }>((post) => {
     return {
       href: Astro.url + post.slug + "/",

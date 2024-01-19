@@ -5,11 +5,12 @@ type Props = {
   isSubheading?: boolean
   publishDate: Date
   updatedDate?: Date
+  description?: string
   name?: string
   [key: string]: any
 }
 
-const { isSubheading = false, publishDate, updatedDate, name, ...props } = Astro.props
+const { isSubheading = false, publishDate, updatedDate, name, description, ...props } = Astro.props
 ---
 
 <div transition:name={name} transition:animate="initial">
@@ -28,7 +29,7 @@ const { isSubheading = false, publishDate, updatedDate, name, ...props } = Astro
         <div class="mb-2">
           <FormattedDate date={publishDate} />
           {updatedDate && (
-            <div class="italic">
+            <div class="italic prose-sm">
               Last updated on <FormattedDate date={updatedDate} />
             </div>
           )}
@@ -39,4 +40,5 @@ const { isSubheading = false, publishDate, updatedDate, name, ...props } = Astro
       </>
     )
   }
+  { description ? <div class="italic">{description}</div> : null }
 </div>

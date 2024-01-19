@@ -14,11 +14,13 @@ const { title, description, publishDate, updatedDate, heroImage } = Astro.props 
     <div class="w-full px-4 pb-8">
       {heroImage && <Image class="mx-auto block rounded-lg shadow-md" width={1020} height={510} src={heroImage} alt={title} />}
     </div>
-    <div class="prose mx-auto max-w-screen-md space-y-4">
+    <div class="mx-auto max-w-screen-md space-y-4">
       <div class="space-y-4 border-b border-neutral pb-4 text-center">
-        <BlogHeader publishDate={publishDate} updatedDate={updatedDate} name={`title-${title}`} class="m-0 mb-2">{title}</BlogHeader>
+        <BlogHeader description={description} publishDate={publishDate} updatedDate={updatedDate} name={`title-${title}`} class="m-0 mb-2">{title}</BlogHeader>
       </div>
-      <slot />
+      <div class="prose mx-auto text-justify">
+        <slot />
+      </div>
     </div>
   </article>
 </Layout>
