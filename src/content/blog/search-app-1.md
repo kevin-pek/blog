@@ -2,7 +2,7 @@
 title: Making a Native Document Search App, Part 1
 description: or, a series on implementing local search methods for documents
 publishDate: 2024-01-19
-updatedDate: 2024-01-19
+updatedDate: 2024-01-20
 tags:
   - search
   - nlp
@@ -14,8 +14,8 @@ When studying I often find it troublesome to have a whole set of school notes, t
 
 This was the question I asked myself back in May of last year, about half a year after the release of ChatGPT and the rise of LLMs based applications. By this time, a quick search online will give you countless "Chat with your PDF" websites, and I realised I could quickly spin up a new ChatGPT wrapper with some predefined prompts and call it a day. However, being a contrarian (and overly ambitious), I wanted a solution that also met the following criteria:
 
-1. It would have no chance of "hallucinating". I wanted it to point to specific sections of the document that would relevant to the query.
-2. I should be able to see which parts of the document contained the relevant information, and be able open the document at that exact page for reference.
+1. It would have no chance of "hallucinating". I wanted it to point to specific sections of the document that would be relevant to the query.
+2. I should be able to see which parts of the document contained the relevant information, and be able to open the document at that exact page for reference.
 
 Additionally, the idea of having to pay for the usage of OpenAI's API and rely on an internet connection drove me away from this idea. A quick google search yielded an alternative solution: I could encode the contents of the documents using a sentence embedding model; A model that converts text into a vector of real numbers. We can then retrieve relevant results based on the similarity of the vectors of the search query and text.
 
