@@ -14,7 +14,7 @@ const parseOptionalDateFormat = (dateString: string | undefined) => {
 }
 
 const parseCustomDateFormat = (dateString: string) => {
-  const parsedDate = parse(dateString, "EEEE dd-MM-yyyy HH:mm", new Date())
+  const parsedDate = parse(dateString, "yyyy-MM-dd", new Date())
   if (!isValid(parsedDate)) {
     throw new Error("Invalid date format")
   }
@@ -27,9 +27,8 @@ const blog = defineCollection({
     z.object({
       title: z.string(),
       description: z.string().optional(),
-      // Transform string to Date object
-      publishDate: z.string().transform(parseCustomDateFormat),
-      updatedDate: z.string().optional().transform(parseOptionalDateFormat),
+      publishDate: z.date(),
+      updatedDate: z.date().optional(),
       heroImage: image().optional(),
     }),
 })
