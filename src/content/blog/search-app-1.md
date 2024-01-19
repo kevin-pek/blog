@@ -106,7 +106,7 @@ It became clear to me that for this option to be feasible for a general usage, I
 
 ### Executable Binaries
 
-The last option I made was to implement this document loading process using a more efficient language than javascript. To do this, I decided to implement the document parsing logic in Swift. So I got to work to learning the Swift programming language, and spending lots of time googling and asking ChatGPT how to do very basic things in Swift.
+The last option I made was to implement this document loading process using a more efficient language than javascript. To do this, I decided to implement the document parsing logic in Swift. So I got to work learning the Swift programming language, and spending lots of time googling and asking ChatGPT how to do very basic things in Swift.
 
 It was also around this time where I made a discovery that invalidated much of my work. The Natural Language framework provided by Apple provides most of the functionality needed for this app I was trying to make. This meant that all of the heavy lifting that my app needed could be done using native Swift libraries, which could solve all of the problems I have been facing over the past few weeks! After a few hours of tinkering, I got something very basic to try out:
 
