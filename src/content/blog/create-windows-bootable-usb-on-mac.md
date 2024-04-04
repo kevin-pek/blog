@@ -1,8 +1,8 @@
 ---
 title: How to Create Windows Bootable USB on Mac
-description: 
+description: To revive your old computers
 publishDate: 2024-04-05
-updatedDate: 
+updatedDate: 2024-04-05
 tags:
 ---
 ## Requirements
