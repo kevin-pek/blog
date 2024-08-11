@@ -14,7 +14,7 @@ In the end, the most effective approach I found was also a straightforward one, 
 
 The previous implementation works by creating a new process that runs precompiled Swift scripts that accept a set of command line arguments. These standalone scripts implement functions such as rendering pages of the PDF documents, and searching across a single document with a given query.
 
-Given a user's search query, a new search process will be started for each PDF file in the collection, where each program's `stdout` is a list of JSON objects representing the search results. Upon completion, these results are then parsed by the V8 Isolate which the extension runs in.
+For example, if we want to search a collection, a new search process will be started for each PDF file in the collection with the user's search query as the argument, where each program's `stdout` is a list of JSON objects representing the search results. Upon completion, these results are then parsed by the NodeJS process (V8 Isolate) which the extension runs in.
 
 However, Raycast actually provides a [Swift package](https://github.com/raycast/extensions-swift-tools) to make this process simpler, removing the need for me to compile my own Swift scripts and handle outputs. Instead of writing self contained scripts, I can now wrap the code inside functions marked with the `@raycast` macro, and they will be compiled into functions I can call directly within my extension. This still launches a new process for the Swift program under the hood, but the workflow is greatly simplified.
 

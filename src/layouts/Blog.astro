@@ -18,7 +18,7 @@ const { title, description, publishDate, updatedDate, heroImage } = Astro.props 
       <div class="space-y-4 border-b border-neutral pb-4 text-center">
         <BlogHeader description={description} publishDate={publishDate} updatedDate={updatedDate} name={`title-${title}`} class="m-0 mb-2">{title}</BlogHeader>
       </div>
-      <div class="prose mx-auto text-justify">
+      <div class="prose mx-auto">
         <slot />
       </div>
     </div>
