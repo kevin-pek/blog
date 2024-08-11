@@ -1,11 +1,13 @@
 ---
-title: Making a Native Document Search App, Part 1
-description: or, a series on implementing local search methods for documents
+title: Making an app to search documents, Part 1
+description: start of a series on implementing an extension for Raycast
 publishDate: 2024-01-19
-updatedDate: 2024-01-20
+updatedDate: 2024-08-11
 tags:
   - search
   - nlp
+  - nodejs
+  - swift
 ---
 
 ## Motivation
